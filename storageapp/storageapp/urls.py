@@ -15,10 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from rest_framework.routers import SimpleRouter
+from items.views import ItemAPIViewSet
+
+router = SimpleRouter()
+
+router.register(r'item', ItemAPIViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('drf-auth/', include('rest_framework.urls')),
-    path('api/v1/', (include('items.urls', namespace='items'))),
+    # path('drf-auth/', include('rest_framework.urls')),
 ]
-
+urlpatterns += router.urls

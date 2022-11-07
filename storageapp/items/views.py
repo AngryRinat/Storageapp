@@ -1,12 +1,8 @@
-from rest_framework import generics
+from rest_framework.viewsets import ViewSet
 from items.models import *
 from items.serializers import *
 
-class ItemAPIListView(generics.ListAPIView):
+class ItemAPIViewSet(ViewSet):
     queryset = Item.objects.all()
     serializer_class = ItemSerializer
 
-
-class ItemAPIUpdateView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Item.objects.all()
-    serializer_class = ItemSerializer

@@ -1,8 +1,7 @@
 from django.contrib import admin
 
-from items.models import Company, EquipTag, Item
+from items.models import Company,  Item
 
 admin.site.register(Company)
-admin.site.register(EquipTag)
 admin.site.register(Item)
 

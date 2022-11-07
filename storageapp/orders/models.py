@@ -7,3 +7,4 @@ class Order(models.Model):
     newitem = models.ForeignKey(Item, on_delete=models.CASCADE)
     amount = models.PositiveIntegerField()
     created_at = models.DateTimeField(auto_created=True)
+    is_active = models.BooleanField(default=True)

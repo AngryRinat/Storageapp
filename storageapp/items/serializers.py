@@ -1,4 +1,4 @@
-from items.models import Item,EquipTag,Company
+from items.models import Item, Company
 from rest_framework import serializers
 
 
